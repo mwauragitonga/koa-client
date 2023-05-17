@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>Admin Dashboard</title>
+    <!-- Simple bar CSS -->
+    <link rel="stylesheet" href="css/simplebar.css">
+    <!-- Fonts CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="css/feather.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
+
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <!-- App CSS -->
+    <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
+    <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+  </head>
+  <body class="vertical  light  ">
+    <div class="wrapper"><!doctype html>
+    <html lang="en">
+    
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="icon" href="favicon.ico">
+      <title>Admin Dashboard</title>
+      <!-- Fonts CSS -->
+      <link
+        href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+      <!-- Icons CSS -->
+      <link rel="stylesheet" href="css/feather.css">
+      <!-- <link rel="stylesheet" href="css/dataTables.bootstrap4.css"> -->
+    
+      <!-- Date Range Picker CSS -->
+      <link rel="stylesheet" href="css/daterangepicker.css">
+      <!-- App CSS -->
+      <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
+      <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" id="darkTheme" disabled>
+    
+    </head>
+    
+    <body class="vertical  light  ">
+      <div class="wrapper">
+        <nav class="topnav navbar navbar-light">
+          <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
+            <i class="fe fe-menu navbar-toggler-icon"></i>
+          </button>
+    
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link text-muted my-2" href="#" id="modeSwitcher" data-mode="light">
+                <i class="fe fe-sun fe-16"></i>
+              </a>
+            </li>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="avatar avatar-sm mt-2">
+                  <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+                </span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Logout</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+          <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+            <i class="fe fe-x"><span class="sr-only"></span></i>
+          </a>
+          <nav class="vertnav navbar navbar-light">
+            <!-- nav bar -->
+            <div class="w-100 mb-4 d-flex">
+              <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
+                <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
+                  <g>
+                    <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
+                    <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
+                    <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
+                  </g>
+                </svg>
+              </a>
+            </div>
+            <ul class="navbar-nav flex-fill w-100 mb-2">
+              <li class="nav-item ">
+                <a href="#dashboard">
+                  <i class="fe fe-home fe-16"></i>
+                  <span class="ml-3 item-text">Dashboard</span><span class="sr-only">(current)</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        <main role="main" class="main-content">
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <div class="col-12">
+                <div class="row align-items-center mb-2">
+                  <div class="col">
+                    <h2 class="h5 page-title">Welcome Admin!</h2>
+                  </div>
+    
+                </div>
+                <div class="row">
+                  <div class="col-12 mb-4" id="notif_widget_container">
+    
+                  </div>
+                  <div class="col-12 mb-4" id="warning_container">
+    
+                  </div> <!-- /. col -->
+                </div>
+    
+                <!-- / .row -->
+                <div class="col-md-12">
+                  <div class="card shadow mb-4">
+                    <div class="card-header">
+                      <strong class="card-title">Find closest points between grid points</strong>
+                    </div>
+                    <div class="card-body">
+                      <form id="search_form" class="needs-validation" novalidate="">
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="validationCustom3">Grid Coordinates</label>
+                            <input type="text" class="form-control" id="grid_values" value="2,2;-3,12;4,12" required="">
+                            <div class="valid-feedback"> Looks good! </div>
+                          </div>
+                          <button class="col-md-3 btn  btn-primary" style="height: min-content; margin-top: 30px"
+                            type="submit">Submit</button>
+                      </form>
+                    </div> <!-- /.card-body -->
+                  </div> <!-- /.card -->
+                </div>
+                <div class="col-md-12">
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <!-- table -->
+                      <div id="grid_points_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <table class="table datatables dataTable no-footer" id="grid_points_table" role="grid"
+                              aria-describedby="grid_points_table_info">
+                              <thead>
+                                <tr role="row">
+    
+                                  <th>Name</th>
+                                  <th>Position</th>
+                                  <th>Office</th>
+                                </tr>
+                              </thead>
+                              <tbody id="grid_points_table_body">
+    
+                              </tbody>
+    
+                            </table>
+                          </div>
+                        </div>
+    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end section -->
+              </div>
+            </div> <!-- .row -->
+          </div> <!-- .container-fluid -->
+    
+        </main> <!-- main -->
+      </div> <!-- .wrapper -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/moment.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src='js/daterangepicker.js'></script>
+      <script src='js/jquery.stickOnScroll.js'></script>
+      <script src="js/tinycolor-min.js"></script>
+      <script src="js/config.js"></script>
+    
+      <script src="js/apps.js"></script>
+      <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    
+      <script>
+
+      </script>
+      <script>
+
+        // on load fetch all the data
+        $(document).ready(function () {
+          getClosestPoints();
+
+        });
+        $("#search_form").submit(function (e) {
+          e.preventDefault();
+          handleFormSubmission();
+          getClosestPoints();
+        });
+
+
+        function handleFormSubmission() {
+          // Get the form input value
+          var gridValues = $('#grid_values').val();
+          var url = "http://127.0.0.1:8000/api/closest-points/";
+          var method = "POST";
+          var headers = {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer "
+          };
+          var data = JSON.stringify({
+            "points": gridValues
+          });
+          $.ajax({
+            url: url,
+            method: method,
+            headers: headers,
+            crossDomain: true,
+            data: data,
+            success: function (response) {
+              var html = `<div class="col-12 mb-4">
+                      <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">Well done!</h4>
+                        <hr>
+                        <p class="mb-0">Closest Points Found</p> ` + response.closest_points + `
+                      <hr>
+                        <p class="mb-0">All Points Entered </p> ` + response.all_points + `
+                      </div>
+                    </div>`;
+              $("#notif_widget_container").html(html);
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              // Handle the error
+              error = JSON.parse(xhr.responseText);
+              var html = ` <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Error occured!</strong> `+ error.detail + ` <button type="button"
+                          class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">×</span>
+                        </button>
+                      </div>`
+              $("#warning_container").html(html);
+            }
+          });
+        }
+        function getClosestPoints() {
+          var url = "http://127.0.0.1:8000/api/closest-points/";
+          var method = "GET";
+          var headers = {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer "
+          };
+          $.ajax({
+            url: url,
+            method: method,
+            headers: headers,
+            crossDomain: true,
+            success: function (response) {
+              // parse the response
+              response = (response);
+              // Handle the successful response
+              ` <div class="alert alert-success" role="alert" id="notif_widget">
+                        <h4 class="alert-heading">Closest Points Found!</h4>
+                        <hr>
+                        <p class="mb-0">The Closest Points Found are :- </p>
+                      </div>`
+              var table = document.getElementById("grid_points_table");
+              var tbody = document.getElementById("grid_points_table_body");
+              // loop throguh the response and append the data to the table as table rows 
+              let tr = ``;
+
+              for (let i = 0; i < response.length; i++) {
+                counter = i + 1;
+                tr += ` <tr role="row">
+                                 
+                                 
+                                 <td> ` + counter + ` </td>
+                                  <td>` + response[i].all_points + `</td>
+                                  <td>` + response[i].closest_points + `</td>
+                                 </tr>`;
+                tbody.innerHTML = tr;
+              }
+
+              $('#grid_points_table').DataTable(
+                {
+                  "oLanguage": {
+                    "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' },
+                    "sInfo": "Showing page _PAGE_ of _PAGES_",
+                    "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
+                    "sSearchPlaceholder": "Search...",
+                    "sLengthMenu": "Results :  _MENU_",
+                  },
+
+                  "stripeClasses": [],
+                  "lengthMenu": [10, 20, 50],
+                  "pageLength": 10,
+                  drawCallback: function () { $('.dataTables_paginate > .pagination').addClass(' pagination-style-13 pagination-bordered mb-5'); }
+
+                });
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              // Handle the error
+              error = JSON.parse(xhr.responseText);
+              var html = ` <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Error occured!</strong> `+ error.detail + ` <button type="button"
+                          class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">×</span>
+                        </button>
+                      </div>`
+              $("#warning_container").html(html);
+
+            }
+          });
+        }
+
+      </script>
+    </body>
+    
+    </html>
+      <nav class="topnav navbar navbar-light">
+        <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
+          <i class="fe fe-menu navbar-toggler-icon"></i>
+        </button>
+        
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link text-muted my-2" href="#" id="modeSwitcher" data-mode="light">
+              <i class="fe fe-sun fe-16"></i>
+            </a>
+          </li>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="avatar avatar-sm mt-2">
+                <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+              </span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+        <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+          <i class="fe fe-x"><span class="sr-only"></span></i>
+        </a>
+        <nav class="vertnav navbar navbar-light">
+          <!-- nav bar -->
+          <div class="w-100 mb-4 d-flex">
+            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
+              <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
+                <g>
+                  <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
+                  <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
+                  <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
+                </g>
+              </svg>
+            </a>
+          </div>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item ">
+              <a href="#dashboard">
+                <i class="fe fe-home fe-16"></i>
+                <span class="ml-3 item-text">Dashboard</span><span class="sr-only">(current)</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main role="main" class="main-content">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="row align-items-center mb-2">
+                <div class="col">
+                  <h2 class="h5 page-title">Welcome Admin!</h2>
+                </div>
+               
+              </div>
+            <!-- / .row -->
+            <div class="col-md-12">
+              <div class="card shadow mb-4">
+                <div class="card-header">
+                  <strong class="card-title">Find closest points between grid points</strong>
+                </div>
+                <div class="card-body">
+                  <form class="needs-validation" novalidate="">
+                    <div class="form-row">
+                      <div class="col-md-6 mb-3">
+                        <label for="validationCustom3">Grid Coordinates</label>
+                        <input type="text" class="form-control" id="validationCustom3" value="2,2;-3,12;4,12" required="">
+                        <div class="valid-feedback"> Looks good! </div>
+                      </div>
+                    <button class="col-md-3 btn  btn-primary" style="height: min-content; margin-top: 30px" type="submit">Submit</button>
+                  </form>
+                </div> <!-- /.card-body -->
+              </div> <!-- /.card -->
+            </div>
+            <div class="card shadow">
+              <div class="card-body">
+                <div class="toolbar">
+                  <form class="form">
+                    <div class="form-row">
+                      <div class="form-group col-auto mr-auto">
+                        <label class="my-1 mr-2 sr-only" for="inlineFormCustomSelectPref1">Show</label>
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelectPref1">
+                          <option value="">...</option>
+                          <option value="1">12</option>
+                          <option value="2" selected="">32</option>
+                          <option value="3">64</option>
+                          <option value="3">128</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-auto">
+                        <label for="search" class="sr-only">Search</label>
+                        <input type="text" class="form-control" id="search1" value="" placeholder="Search">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <!-- table -->
+                <table class="table table-borderless table-hover">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>All Coordinates</th>
+                      <th>Closest Coordinates</th>
+                      <th>Search conduted on</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="avatar avatar-md">
+                         <span>1</span>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="mb-0 text-muted"><strong>Brown, Asher D.</strong></p>
+                        <small class="mb-0 text-muted">2474</small>
+                      </td>
+                      <td>
+                        <p class="mb-0 text-muted">Accumsan Consulting</p>
+                        <small class="mb-0 text-muted">Ap #331-7123 Lobortis Avenue</small>
+                      </td>
+                      <td class="text-muted">13/09/2020</td>
+                      
+                    </tr>
+                   
+                  </tbody>
+                </table>
+                <nav aria-label="Table Paging" class="mb-0 text-muted">
+                  <ul class="pagination justify-content-center mb-0">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div> <!-- end section -->
+            </div>
+          </div> <!-- .row -->
+        </div> <!-- .container-fluid -->
+       
+      </main> <!-- main -->
+    </div> <!-- .wrapper -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/simplebar.min.js"></script>
+    <script src='js/daterangepicker.js'></script>
+    <script src='js/jquery.stickOnScroll.js'></script>
+    <script src="js/tinycolor-min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/topojson.min.js"></script>
+    <script src="js/datamaps.all.min.js"></script>
+    <script src="js/datamaps-zoomto.js"></script>
+    <script src="js/datamaps.custom.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script>
+      /* defind global options */
+      Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
+      Chart.defaults.global.defaultFontColor = colors.mutedColor;
+    </script>
+    <script src="js/gauge.min.js"></script>
+    <script src="js/jquery.sparkline.min.js"></script>
+    <script src="js/apexcharts.min.js"></script>
+    <script src="js/apexcharts.custom.js"></script>
+    <script src="js/apps.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag()
+      {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-56159088-1');
+    </script>
+  </body>
+</html>
